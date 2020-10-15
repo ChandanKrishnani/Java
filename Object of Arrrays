@@ -1,0 +1,75 @@
+import java.util.Scanner;
+public class Test
+{  
+public static void main(String args[])  
+{  
+int a; String name,pan; double income;
+System.out.print("Enter the Number of Employees :");
+
+
+Scanner sc =new Scanner(System.in);
+a=sc.nextInt();
+Employee[] obj = new Employee[a] ;  
+sc.nextLine();
+for(int i=0;i<a;i++)
+{
+
+    System.out.print("Enter the Pan Number :");
+    pan=sc.next();
+    sc.nextLine();
+    System.out.print("Enter the Name :");
+    name=sc.nextLine();
+    System.out.print("Enter the Income :");
+    income=sc.nextDouble();
+    obj[i] = new Employee(pan,name,income);  
+}   
+System.out.println(" Pan Number          Name            Income           Tax"); 
+for(int i=0;i<a;i++)
+{ 
+    obj[i].display();  
+}  
+}  
+}
+//Product class with product Id and product name as attributes  
+class Employee  
+{  
+String pro_name , pro_Id; 
+double income,tax; 
+//Product class constructor  
+Employee(String  pid, String n,double in)  
+{  
+pro_Id = pid;  
+pro_name = n;  
+income=in;
+}  
+public void display()  
+{  
+    if(income == 0)
+        {
+
+            tax=0;
+        }
+        else if(income <= 180000)
+        {
+            tax=0;
+
+        }
+        else if(income <= 350000)
+        {
+            tax=((income-180000)*1)/10;
+        }
+        else if(income <= 750000)
+        {
+            tax=(((income-350000)*2)/10)+5000;
+
+        }
+        else
+        {
+            tax=(((income-750000)*3)/10)+25000;
+
+        }
+
+    System.out.print(pro_Id + "             "+ pro_name + "             "+ income + "              " + tax);  
+    System.out.println();  
+}  
+} 
