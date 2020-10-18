@@ -1,0 +1,44 @@
+import java.util.Scanner;
+class Test
+{
+public static void main(String args[])
+
+{
+
+	Scanner sc=new Scanner(System.in);
+
+	System.out.print("Enter the first side of triangle :");
+	int a=sc.nextInt();
+	System.out.print("Enter the Second side of triangle :");
+	int b=sc.nextInt();
+	System.out.print("Enter the Third side of triangle :");
+	int c=sc.nextInt();
+	if(a+b>c && b+c >a && c+a>b )
+	{
+		System.out.println("Yes it can form a triangle ");
+		 a = (int)Math.pow(a, 2); 
+		 b = (int)Math.pow(b, 2); 
+		 c = (int)Math.pow(c, 2); 
+		   
+		if (a == a + b || b == a + c || c == a + b)
+		{ 
+			System.out.println("Right Angled triangle ");
+		} 
+		else if(a > c + b || b > a + c || c > a + b)
+		{ 
+			System.out.println("Optuse angled Triangle");
+		} 
+		else{ 
+			System.out.println("Acute angled triangle ");
+		} 
+	
+	
+
+}
+else{
+	System.out.print("No these sides of can not form a triangle.");
+}
+
+}
+}
+
