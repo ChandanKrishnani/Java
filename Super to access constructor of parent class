@@ -1,0 +1,42 @@
+import java.util.Scanner;
+class Rectangle
+{ 
+    int length,breadth;
+	public Rectangle(int len,int brth) 
+	{ 
+		length=len;
+		breadth=brth;
+		System.out.println("Parameter of rectangle is : " + 2 *(length + breadth) ); 
+		System.out.println("Area of rectangle is : " + (length * breadth) ); 
+		
+	} 
+} 
+class Square extends Rectangle
+{ 
+    int side;
+    public Square(int len, int brth,int sid) 
+	{ 
+        super(len,brth);
+		side=sid;
+		System.out.println("Parameter of circle  : " + (4*side));
+		System.out.println("Area of circle  : " + (side*side));
+		 
+	} 
+} 
+
+class Test 
+{ 
+	
+	public static void main(String[] args) 
+	{ 
+	int a,b,c;
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter the Length of rectangle : ");
+	a=sc.nextInt();
+	System.out.print("Enter the breadth of rectangle : "); 
+	b=sc.nextInt();
+	System.out.print("Enter the side of square :" ); 
+	c=sc.nextInt();
+	Square s = new Square(a,b,c); 
+	} 
+} 
