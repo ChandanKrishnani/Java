@@ -1,0 +1,72 @@
+import java.util.Scanner;
+class Test 
+{  
+    public static void main(String args[])  
+    {
+     
+        Flight obj = new Flight();
+        obj.get_Flight_Num();
+        obj.get_Destination();
+        obj.get_Distance();
+        obj.cal_Fuel_Req();
+        obj.display();
+    }
+}
+class Flight
+{
+     String Flight_Num,Destination;
+     double dist,fuel_Req;
+     Scanner sc= new Scanner(System.in);
+     public void get_Flight_Num()
+     {
+         System.out.print("Enter the Flight Number : ");
+         Flight_Num=sc.next();
+     }
+     public void get_Destination()
+     {
+         System.out.print("Enter the Destination : ");
+         sc.nextLine();
+         Destination=sc.nextLine();
+     }
+     public void get_Distance()
+     {
+         System.out.print("Enter the Distance  : ");
+         dist=sc.nextDouble();
+     }
+     public void cal_Fuel_Req()
+     {
+         double a=dist;
+         if( a>0 )
+         {
+             if(a<=600)
+             {
+                 fuel_Req=a * 0.5;
+             }
+             else if(a<=1600)
+             {
+                a=a-600;
+                fuel_Req=(a*0.5)+300;
+            }
+            else
+            {
+                a=a-1600;
+                fuel_Req=(a*0.4)+800;
+            }
+
+         }
+         else
+         {
+             fuel_Req=0;
+         }
+     }
+     public void display()
+    {
+        System.out.println("Here is the details of flight :  ");
+        System.out.println("Flight Number  :" + Flight_Num );
+        System.out.println("Flight Destination  :" + Destination);
+        System.out.println("Distance covered  :" + dist);
+        System.out.println("Fuel Required  :"+ fuel_Req);
+
+    }
+}
+        
